@@ -19,6 +19,10 @@ const wishText = "HBD ALCHA";
 const message =
     "Selamat ulang tahun! Semoga hari kamu selalu seru, penuh tawa, dan dikelilingi orang-orang yang kamu sayang. Semoga sehat terus, rezekinya makin lancar, dan semua hal yang kamu impikan pelan-pelan bisa tercapai. Makasih yaa udah jadi orang yang selalu asik dan bikin hari-hari jadi lebih berwarna. Semoga ke depannya makin banyak momen bahagia yang bisa kamu rasain, dan jangan lupa tetap jadi diri kamu yang sekarang, tetap jadi keren dengan caramu sendiri!";
 const sound = new Audio("sounds/hbd_song.mp3");
+const today = new Date();
+const date = today.getDate();
+const month = today.getMonth();
+const isTodayBirthday = (date === 1 & month === 4);
 
 let lastColor = "";
 let playCount = 0;
@@ -259,6 +263,15 @@ function stopAnimations() {
 window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
 
+window.addEventListener("DOMContentLoaded", () => {
+    if (!isTodayBirthday) {
+        startButton.innerText = "Hanya bisa diakses tanggal 1 Mei";
+        startButton.style.backgroundColor = "#888";
+        startButton.style.cursor = "not-allowed";
+        startButton.style.boxShadow = "none";
+    }
+});
+
 sound.addEventListener("ended", () => {
     playCount++;
     sound.currentTime = 0;
@@ -270,6 +283,8 @@ sound.addEventListener("ended", () => {
 });
 
 startButton.addEventListener("click", function () {
+    if (!isTodayBirthday) return;
+
     setTimeout(() => {
         sound.play().catch((error) => console.log("Autoplay dicegah", error));
     }, 1500);
