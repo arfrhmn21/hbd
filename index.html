@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Untuk Alcha</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <canvas id="fireworksCanvas"></canvas>
+        <div class="overlay" id="overlay">
+            <div class="overlay-content">
+                <button id="startButton">click here</button>
+            </div>
+        </div>
+
+        <div class="cake-container hidden" id="cakeContainer">
+            <div id="textBalloonContainer" class="text-balloon-container"></div>
+
+            <div class="hand-pointer hidden" id="handPointer">👈</div>
+
+            <div class="candle drop" id="candle">
+                <div class="wick"></div>
+                <div class="spark"></div>
+                <div class="flame"></div>
+            </div>
+
+            <div class="layer layer-top drop"></div>
+            <div class="layer layer-middle drop"></div>
+            <div class="layer layer-bottom drop"></div>
+            <!--  -->
+            <!---->
+
+            <div class="plate"></div>
+        </div>
+
+        <div class="balloon-container hidden" id="balloonContainer"></div>
+
+        <div class="letter-overlay hidden" id="letterOverlay">
+            <div class="letter-content">
+                <button class="close-letter" id="closeLetter">&times;</button>
+
+                <div class="profile-frame">
+                    <img src="alcha.jpeg" alt="Alcha" id="profilePhoto" />
+                </div>
+
+                <h3>Hai Alchaa :)</h3>
+
+                <p id="typingText"></p>
+
+                <p style="text-align: right" id="signature" class="hidden">
+                    — Arif
+                </p>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
